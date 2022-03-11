@@ -1,33 +1,29 @@
 <?php
 if(isset($_POST['submit']))
 {
-$num=$_POST['num'];
-$sum=0;
-$temp=$num;
-while($temp!=0)
+	$n=$_POST['num'];
+define('NUM',$n);
+$a = 0;
+$b = 1;
+echo "$a $b "; // 0 1
+for($i=1   ; $i<= NUM-2 ;  $a=$b, $b=$c, $i++ )
 {
-$rem=$temp%10;
-$sum=$sum+$rem*$rem*$rem;
-$temp=$temp/10;
-}
-if($num==$sum)
-{
-echo "$num is an Armstrong number";
-}
-else
-{
-echo "$num is not an Armstrong number";
+  echo $c = $a+$b;
+  echo " ";
 }
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Armstrong Number</title>
+<title>Fibonacci Series </title>
 </head>
 <body>
 <table>
-<form name="armstrong" method="post">
+<form name="fibonacci" method="post">
+<tr>
+<td colspan="2">Enter number upto you want to print the series.
+</tr>
 <tr>
 <td>Enter Number :</td>
 <td><input type="text" name="num" required></td>
